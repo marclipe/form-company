@@ -1,7 +1,9 @@
 const path = require('path')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+const isDevelopment = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  mode: "development",
+  mode: isDevelopment ? "development" : "production",
   entry: path.resolve(__dirname, "src", "main.jsx"),
   module: {
     rules: [
@@ -22,6 +24,16 @@ module.exports = {
     filename: "bundle.js",
   },
   resolve: {
-    extensions: [".js",".jsx", ".ts", ".tsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "public"),
+    },
+  },
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: path.resolve(__dirname, "public", "index.html"),
+    }),
+  ],
 };

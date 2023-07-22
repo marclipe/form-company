@@ -2,7 +2,7 @@
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx",
-    "moduleResolution": "Node16",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "allowJs": true,
     "noEmit": true,

@@ -11,10 +11,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(j|t)sx$/,
+        test: /\.(j|t)sx?$/,
         use: {
           loader: 'babel-loader',
           options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@babel/preset-typescript',
+            ],
             plugins: [
               isDevelopment && require.resolve('react-refresh/babel'),
             ].filter(Boolean),

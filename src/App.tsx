@@ -1,15 +1,15 @@
-import { styled } from 'styled-components'
-
-export const ContainerApp = styled.div`
-  h1 {
-    background-color: red;
-  }
-`
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from './styles/global'
+import { defaultTheme } from './styles/themes/default'
 
 export function App() {
   return (
-    <ContainerApp>
-      <h1>Hello World!</h1>
-    </ContainerApp>
+    <ThemeProvider theme={defaultTheme}>
+      <div>
+        <h1>Hello React!</h1>
+      </div>
+      <GlobalStyle theme={defaultTheme} />
+    </ThemeProvider>
   )
 }

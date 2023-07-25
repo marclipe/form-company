@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
+import { Theme } from './themes/default'
 
-export const GlobalStyle = createGlobalStyle`
+interface GlobalStyleProps {
+  theme: Theme
+}
+
+export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
  * { 
   margin: 0;
   border: 0;
@@ -8,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
  }
 
  body {
-  background-color: ${(props) => props.theme['purple-light']};
-  color: ${(props) => props.theme};
+  background-color: ${(props) => props.theme['gray-100']};
+  color: ${(props) => props.theme['purple-light']};
  }
 `

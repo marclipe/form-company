@@ -1,4 +1,4 @@
-type ThemeType = {
+export interface Theme {
   'purple-mid': string
   'purple-light': string
   white: string
@@ -6,10 +6,10 @@ type ThemeType = {
   'gray-200': string
   'gray-300': string
   'gray-400': string
-  'sucess-color': string
+  'success-color': string
 }
 
-export const defaultTheme: ThemeType = {
+export const defaultTheme: Theme = {
   'purple-mid': '#633BBC',
   'purple-light': '#8257E5',
 
@@ -18,6 +18,5 @@ export const defaultTheme: ThemeType = {
   'gray-200': '#8D8D99',
   'gray-300': '#7C7C8A',
   'gray-400': '#323238',
-
-  'sucess-color': '#1D8841',
+  'success-color': '#1D8841',
 }

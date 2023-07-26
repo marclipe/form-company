@@ -7,13 +7,21 @@ export function Header() {
     <ContainerHeader>
       <nav>
         <div>
-          <NavLink to={'/'} title="Contact"></NavLink>
+          <NavLink to={'/contact'} title="Contact">
+            <div>Contact</div>
+          </NavLink>
         </div>
+        <div>icon</div>
         <div>
-          <NavLink to={'/company'} title="Company"></NavLink>
+          <NavLink to={'/company'} title="Company">
+            <div>Company</div>
+          </NavLink>
         </div>
+        <div>icon</div>
         <div>
-          <NavLink to={'/project'} title="Project"></NavLink>
+          <NavLink to={'/project'} title="Project">
+            <div>Project</div>
+          </NavLink>
         </div>
       </nav>
     </ContainerHeader>

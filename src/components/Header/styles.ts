@@ -7,15 +7,16 @@ interface HeaderStyles {
 
 export const ContainerHeader = styled.header<HeaderStyles>`
   background-color: ${(props) => props.theme['purple-light']};
+  width: 528px;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  gap: 3.438rem;
 
-  nav {
+  /* nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    div {
-      color: ${(props) => props.theme['gray-400']};
-      background-color: red;
-      font-size: 16px;
-    }
-  }
+    align-self: stretch;
+  } */
 `

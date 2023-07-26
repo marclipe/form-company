@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
  }
 
  body {
-  background-color: ${(props) => props.theme['gray-100']};
-  color: ${(props) => props.theme['purple-light']};
+  background-color: ${(props) => props.theme.white};
+  font-family: 'IBM Plex Sans', sans-serif;
  }
 `

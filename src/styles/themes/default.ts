@@ -7,6 +7,7 @@ export interface Theme {
   'gray-300': string
   'gray-400': string
   'success-color': string
+  'background-color': string
 }
 
 export const defaultTheme: Theme = {
@@ -19,4 +20,5 @@ export const defaultTheme: Theme = {
   'gray-300': '#7C7C8A',
   'gray-400': '#323238',
   'success-color': '#1D8841',
+  'background-color': '#5E2BFF',
 }

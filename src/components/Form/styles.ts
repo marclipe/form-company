@@ -82,3 +82,15 @@ export const ContainerLogo = styled.div`
     width: 2.5rem;
   }
 `
+export const Footer = styled.footer<IFormStyles>`
+  color: ${(props) => props.theme['gray-100']};
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    color: ${(props) => props.theme.white};
+  }
+`

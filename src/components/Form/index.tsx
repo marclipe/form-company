@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { FormContainer, ContainerLogo } from './styles'
+import React, { useEffect, useState } from 'react'
+import { FormContainer, ContainerLogo, Footer } from './styles'
 import formIcon from '../../assets/img/form_icon.png'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -43,10 +43,15 @@ export function Form() {
   const onSubmit = (data: any) => {
     console.log('Form data: ', data)
     setIsModalOpen(true)
+    console.log('Modal is open: ', isModalOpen)
+    if (isModalOpen === true) {
+      setIsModalOpen(false)
+      console.log('Modal is open: ', isModalOpen)
+    }
   }
 
   const closeModal = () => {
-    setIsModalOpen(false)
+    // setIsModalOpen(false)
   }
 
   return (
@@ -125,8 +130,20 @@ export function Form() {
         ></textarea>
 
         <button type="submit">send proposal</button>
+        <Modal isOpen={isModalOpen} onRequestClose={closeModal} />
       </FormContainer>
-      <Modal isOpen={isModalOpen} onRequestClose={closeModal} />
+      <Footer>
+        <p>
+          Developed by{' '}
+          <a
+            target="_blank"
+            href="https://github.com/marclipe/"
+            rel="noreferrer"
+          >
+            Marcos Felipe
+          </a>
+        </p>
+      </Footer>
     </form>
   )
 }

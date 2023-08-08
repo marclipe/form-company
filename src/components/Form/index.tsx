@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FormContainer, ContainerLogo } from './styles'
 import formIcon from '../../assets/img/form_icon.png'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
+import { Modal } from '../Modal'
 
 const schema = zod.object({
   iname: zod.string().min(3, 'Name is required!').nonempty(),
@@ -27,6 +28,8 @@ const schema = zod.object({
 })
 
 export function Form() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   const {
     register,
     handleSubmit,
@@ -39,6 +42,11 @@ export function Form() {
 
   const onSubmit = (data: any) => {
     console.log('Form data: ', data)
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
   }
 
   return (
@@ -118,6 +126,7 @@ export function Form() {
 
         <button type="submit">send proposal</button>
       </FormContainer>
+      <Modal isOpen={isModalOpen} onRequestClose={closeModal} />
     </form>
   )
 }
